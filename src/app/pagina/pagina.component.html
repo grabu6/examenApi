@@ -1,11 +1,25 @@
-<div class="taula">
-    <ul>
-        <li class="table_li" *ngFor="let q of this.quadres">
-            <p name="data">{{q.artist_title}}</p>
-            <p name="uni">{{q.artist_id}}</p>
-            <p name="nom"></p>
-            <p name="cat"></p>
-            <p name="guard"></p>
+<header *ngr="let h of this.paginacio|keyvalue">
+    <h1>Llistat de quadres</h1>
+    <label>Mida imatge:</label><input>
+    <h2>Pàgina {{h.value.current_page}} de {{h.value.total_pages}}</h2>
+</header>
+<section id="body">
+<div class="table">
+    <ul>        
+        <li class="tr_header">
+            <p name="titol">Titol</p> 
+            <p name="id">Id</p> 
+            <p name="img">Imatge</p> 
+            <p name="visualitzar">Visualitzar</p>
+        </li>
+        <li class="table_li" *ngFor="let q of this.quadres|keyvalue">
+            {{q.key}}:{{q.value.title}}---{{q.value.id}}---<img src="{{q.value.thumbnail.lqip}}" alt="imatge">
+            
+            
         </li>
     </ul>
+    <footer *ngFor="let p of this.paginacio|keyvalue">
+        <p name="paginacio">{{p.value.next_url}}</p>
+    </footer>
 </div>
+</section>
