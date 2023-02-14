@@ -14,6 +14,12 @@ export class Servei {
     const url = 'https://api.artic.edu/api/v1/artworks';
     return this.http.get(url,requestOptions);
   }
+
+  obtenirArtist() {
+    const requestOptions = this.createHeader();
+    const url = 'https://api.artic.edu/api/v1/artists';
+    return this.http.get(url,requestOptions);
+  }
   
 
   private createHeader(){

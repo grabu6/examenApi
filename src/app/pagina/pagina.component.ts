@@ -9,7 +9,8 @@ import { Servei } from '../project/serveis/api/crides';
 
 export class PaginaComponent implements OnInit {
   quadres!:Array<any>;
-  paginacio!:Array<any>;
+  paginacio!:any;
+  artistes!:Array<any>;
   constructor(private servei: Servei ) { }
 
   ngOnInit(): void {
@@ -21,6 +22,10 @@ export class PaginaComponent implements OnInit {
     this.servei.obtenirDades().subscribe((data:any)=>{
       this.paginacio = data.pagination;
       console.log(this.paginacio)
+    })
+    this.servei.obtenirArtist().subscribe((data:any)=>{
+      this.artistes = data.data;
+      console.log(this.artistes)
     }
   )}
 }

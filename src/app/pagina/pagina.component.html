@@ -1,7 +1,7 @@
-<header *ngr="let h of this.paginacio|keyvalue">
+<header>
     <h1>Llistat de quadres</h1>
     <label>Mida imatge:</label><input>
-    <h2>Pàgina {{h.value.current_page}} de {{h.value.total_pages}}</h2>
+    <h2>Pàgina {{paginacio.current_page}} de {{paginacio.total_pages}}</h2>
 </header>
 <section id="body">
 <div class="table">
@@ -13,13 +13,25 @@
             <p name="visualitzar">Visualitzar</p>
         </li>
         <li class="table_li" *ngFor="let q of this.quadres|keyvalue">
-            {{q.key}}:{{q.value.title}}---{{q.value.id}}---<img src="{{q.value.thumbnail.lqip}}" alt="imatge">
-            
-            
-        </li>
+            {{q.value.title}}---{{q.value.id}}---<img src="{{q.value.thumbnail.lqip}}" alt="imatge">---Veure
+        </li><br>
+        <label>Documents per plana:<input type="number"></label><label>Plana:<input type="number"></label><button>Accedir</button><button class="fletxa">&#8594;</button>
     </ul>
-    <footer *ngFor="let p of this.paginacio|keyvalue">
-        <p name="paginacio">{{p.value.next_url}}</p>
-    </footer>
 </div>
 </section>
+<section id="body">
+    <div class="table">
+        <ul>        
+            <li class="tr_header">
+                <p name="titol">Titol</p> 
+                <p name="img">Imatge</p>
+                <p name="nom">Artista</p>  
+            </li>
+            <li class="table_li" *ngFor="let t of this.artistes|keyvalue">
+                {{t.value.key}}---{{t.value.id}}---<img src="{{t.value.thumbnail.lqip}}" alt="imatge">
+            </li><br>
+            <label>Documents per plana:<input type="number"></label><label>Plana:<input type="number"></label><button>Accedir</button><button class="fletxa">&#8594;</button>
+        </ul>
+    </div>
+</section>
+    
