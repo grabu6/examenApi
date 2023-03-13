@@ -6,12 +6,11 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaginaComponent } from './pagina/pagina.component';
-
+import { DragonsComponent } from './dragons/dragons.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PaginaComponent
+    DragonsComponent,
   ],
   imports: [
     BrowserModule,

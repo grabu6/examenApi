@@ -1,0 +1,19 @@
+<h1>Dungeons and dragons</h1>
+<h1>Pantalla inicial</h1>
+
+<div id="dragons">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Acció</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Subtype</th>
+        </tr>
+        <tr *ngFor="let dragon of this.dragons">
+            <td>{{dragon.name}}</td>
+            <td>{{dragon.url}}</td>
+            <td>{{dragon.type}}</td>
+        </tr>
+    </table>
+</div>

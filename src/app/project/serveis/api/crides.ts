@@ -4,23 +4,15 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class Servei {
+export class DragonApi {
 
   constructor(private http: HttpClient) { }
   requestOptions = this.createHeader();
 
-  obtenirDades() {
-    const requestOptions = this.createHeader();
-    const url = 'https://api.artic.edu/api/v1/artworks';
-    return this.http.get(url,requestOptions);
+  getDragons(){
+    const url= 'https://www.dnd5eapi.co/api/monsters/';
+    return this.http.get(url,this.requestOptions);
   }
-
-  obtenirArtist() {
-    const requestOptions = this.createHeader();
-    const url = 'https://api.artic.edu/api/v1/artists';
-    return this.http.get(url,requestOptions);
-  }
-  
 
   private createHeader(){
 
